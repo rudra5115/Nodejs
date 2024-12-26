@@ -1,0 +1,44 @@
+<%- include("header") %>
+
+    <div class="card">
+        <form class="form-horizontal" action="/updateAdmin" method="post" enctype="multipart/form-data">
+            <div class="card-body">
+                <h4 class="card-title">Edit Admin</h4>
+                <div class="form-group row">
+                    <label for="fname" class="col-sm-3 text-end control-label col-form-label">Name</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="username" class="form-control" id="fname" value="<%= getAdmin.username %>"/>
+                    </div>
+                </div>
+                <input type="hidden" value="<%= getAdmin.id %>" name="id">
+                <div class="form-group row">
+                    <label for="lname" class="col-sm-3 text-end control-label col-form-label">Email</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="email" class="form-control" id="lname" value="<%= getAdmin.email %>"/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="lname" class="col-sm-3 text-end control-label col-form-label">Password</label>
+                    <div class="col-sm-9">
+                        <input type="password" name="password"  class="form-control" id="lname" value="<%= getAdmin.password %> "/>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="email1" class="col-sm-3 text-end control-label col-form-label">Img.</label>
+                    <div class="col-sm-9">
+                        <input type="file" name="image" class="form-control" id="email1"  />
+                        <img src="<%= getAdmin.image %>" alt="">
+                    </div>
+                </div>
+            <div class="border-top">
+                <div class="card-body">
+                    <button type="submit" class="btn btn-primary">
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+    <%- include("footer") %>
